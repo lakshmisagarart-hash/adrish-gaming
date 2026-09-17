@@ -1,0 +1,38 @@
+[
+  {
+    "id":1,
+    "name":"Free Fire Diamond Pack",
+    "game":"Free Fire",
+    "category":"Top Up",
+    "price":99,
+    "stock":20,
+    "featured":true
+  },
+  {
+    "id":2,
+    "name":"Free Fire Prime Account",
+    "game":"Free Fire",
+    "category":"Accounts",
+    "price":499,
+    "stock":1,
+    "featured":true
+  },
+  {
+    "id":3,
+    "name":"BGMI UC Pack",
+    "game":"BGMI",
+    "category":"Top Up",
+    "price":199,
+    "stock":20,
+    "featured":false
+  },
+  {
+    "id":4,
+    "name":"COD Mobile CP Pack",
+    "game":"COD Mobile",
+    "category":"Top Up",
+    "price":149,
+    "stock":20,
+    "featured":false
+  }
+]
