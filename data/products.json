@@ -1,38 +1,1352 @@
 [
   {
-    "id":1,
-    "name":"Free Fire Diamond Pack",
-    "game":"Free Fire",
-    "category":"Top Up",
-    "price":99,
-    "stock":20,
-    "featured":true
+    "id": 1,
+    "name": "Diamond Pack #1",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 49,
+    "stock": 8,
+    "featured": true
   },
   {
-    "id":2,
-    "name":"Free Fire Prime Account",
-    "game":"Free Fire",
-    "category":"Accounts",
-    "price":499,
-    "stock":1,
-    "featured":true
+    "id": 2,
+    "name": "UC Pack #2",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 79,
+    "stock": 15,
+    "featured": true
   },
   {
-    "id":3,
-    "name":"BGMI UC Pack",
-    "game":"BGMI",
-    "category":"Top Up",
-    "price":199,
-    "stock":20,
-    "featured":false
+    "id": 3,
+    "name": "CP Pack #3",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 99,
+    "stock": 2,
+    "featured": true
   },
   {
-    "id":4,
-    "name":"COD Mobile CP Pack",
-    "game":"COD Mobile",
-    "category":"Top Up",
-    "price":149,
-    "stock":20,
-    "featured":false
+    "id": 4,
+    "name": "Premium Pack #4",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 149,
+    "stock": 9,
+    "featured": true
+  },
+  {
+    "id": 5,
+    "name": "Starter Pack #5",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 199,
+    "stock": 16,
+    "featured": true
+  },
+  {
+    "id": 6,
+    "name": "Pro Pack #6",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 249,
+    "stock": 3,
+    "featured": true
+  },
+  {
+    "id": 7,
+    "name": "Elite Pack #7",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 299,
+    "stock": 10,
+    "featured": true
+  },
+  {
+    "id": 8,
+    "name": "Ultimate Pack #8",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 349,
+    "stock": 17,
+    "featured": true
+  },
+  {
+    "id": 9,
+    "name": "Legendary Bundle #9",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 399,
+    "stock": 4,
+    "featured": true
+  },
+  {
+    "id": 10,
+    "name": "Rare Bundle #10",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 499,
+    "stock": 11,
+    "featured": true
+  },
+  {
+    "id": 11,
+    "name": "Limited Bundle #11",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 599,
+    "stock": 18,
+    "featured": true
+  },
+  {
+    "id": 12,
+    "name": "Weapon Skin #12",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 699,
+    "stock": 5,
+    "featured": true
+  },
+  {
+    "id": 13,
+    "name": "Character Pack #13",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 799,
+    "stock": 12,
+    "featured": true
+  },
+  {
+    "id": 14,
+    "name": "Battle Pass #14",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 999,
+    "stock": 19,
+    "featured": true
+  },
+  {
+    "id": 15,
+    "name": "Prime Account #15",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 49,
+    "stock": 6,
+    "featured": true
+  },
+  {
+    "id": 16,
+    "name": "Rare Account #16",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 79,
+    "stock": 13,
+    "featured": true
+  },
+  {
+    "id": 17,
+    "name": "Gaming Voucher #17",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 99,
+    "stock": 20,
+    "featured": true
+  },
+  {
+    "id": 18,
+    "name": "Gift Card #18",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 149,
+    "stock": 7,
+    "featured": true
+  },
+  {
+    "id": 19,
+    "name": "Special Bundle #19",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 199,
+    "stock": 14,
+    "featured": true
+  },
+  {
+    "id": 20,
+    "name": "Event Pack #20",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 249,
+    "stock": 1,
+    "featured": true
+  },
+  {
+    "id": 21,
+    "name": "Diamond Pack #21",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 299,
+    "stock": 8,
+    "featured": false
+  },
+  {
+    "id": 22,
+    "name": "UC Pack #22",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 349,
+    "stock": 15,
+    "featured": false
+  },
+  {
+    "id": 23,
+    "name": "CP Pack #23",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 399,
+    "stock": 2,
+    "featured": false
+  },
+  {
+    "id": 24,
+    "name": "Premium Pack #24",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 499,
+    "stock": 9,
+    "featured": false
+  },
+  {
+    "id": 25,
+    "name": "Starter Pack #25",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 599,
+    "stock": 16,
+    "featured": false
+  },
+  {
+    "id": 26,
+    "name": "Pro Pack #26",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 699,
+    "stock": 3,
+    "featured": false
+  },
+  {
+    "id": 27,
+    "name": "Elite Pack #27",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 799,
+    "stock": 10,
+    "featured": false
+  },
+  {
+    "id": 28,
+    "name": "Ultimate Pack #28",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 999,
+    "stock": 17,
+    "featured": false
+  },
+  {
+    "id": 29,
+    "name": "Legendary Bundle #29",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 49,
+    "stock": 4,
+    "featured": false
+  },
+  {
+    "id": 30,
+    "name": "Rare Bundle #30",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 79,
+    "stock": 11,
+    "featured": false
+  },
+  {
+    "id": 31,
+    "name": "Limited Bundle #31",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 99,
+    "stock": 18,
+    "featured": false
+  },
+  {
+    "id": 32,
+    "name": "Weapon Skin #32",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 149,
+    "stock": 5,
+    "featured": false
+  },
+  {
+    "id": 33,
+    "name": "Character Pack #33",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 199,
+    "stock": 12,
+    "featured": false
+  },
+  {
+    "id": 34,
+    "name": "Battle Pass #34",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 249,
+    "stock": 19,
+    "featured": false
+  },
+  {
+    "id": 35,
+    "name": "Prime Account #35",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 299,
+    "stock": 6,
+    "featured": false
+  },
+  {
+    "id": 36,
+    "name": "Rare Account #36",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 349,
+    "stock": 13,
+    "featured": false
+  },
+  {
+    "id": 37,
+    "name": "Gaming Voucher #37",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 399,
+    "stock": 20,
+    "featured": false
+  },
+  {
+    "id": 38,
+    "name": "Gift Card #38",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 499,
+    "stock": 7,
+    "featured": false
+  },
+  {
+    "id": 39,
+    "name": "Special Bundle #39",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 599,
+    "stock": 14,
+    "featured": false
+  },
+  {
+    "id": 40,
+    "name": "Event Pack #40",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 699,
+    "stock": 1,
+    "featured": false
+  },
+  {
+    "id": 41,
+    "name": "Diamond Pack #41",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 799,
+    "stock": 8,
+    "featured": false
+  },
+  {
+    "id": 42,
+    "name": "UC Pack #42",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 999,
+    "stock": 15,
+    "featured": false
+  },
+  {
+    "id": 43,
+    "name": "CP Pack #43",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 49,
+    "stock": 2,
+    "featured": false
+  },
+  {
+    "id": 44,
+    "name": "Premium Pack #44",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 79,
+    "stock": 9,
+    "featured": false
+  },
+  {
+    "id": 45,
+    "name": "Starter Pack #45",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 99,
+    "stock": 16,
+    "featured": false
+  },
+  {
+    "id": 46,
+    "name": "Pro Pack #46",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 149,
+    "stock": 3,
+    "featured": false
+  },
+  {
+    "id": 47,
+    "name": "Elite Pack #47",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 199,
+    "stock": 10,
+    "featured": false
+  },
+  {
+    "id": 48,
+    "name": "Ultimate Pack #48",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 249,
+    "stock": 17,
+    "featured": false
+  },
+  {
+    "id": 49,
+    "name": "Legendary Bundle #49",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 299,
+    "stock": 4,
+    "featured": false
+  },
+  {
+    "id": 50,
+    "name": "Rare Bundle #50",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 349,
+    "stock": 11,
+    "featured": false
+  },
+  {
+    "id": 51,
+    "name": "Limited Bundle #51",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 399,
+    "stock": 18,
+    "featured": false
+  },
+  {
+    "id": 52,
+    "name": "Weapon Skin #52",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 499,
+    "stock": 5,
+    "featured": false
+  },
+  {
+    "id": 53,
+    "name": "Character Pack #53",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 599,
+    "stock": 12,
+    "featured": false
+  },
+  {
+    "id": 54,
+    "name": "Battle Pass #54",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 699,
+    "stock": 19,
+    "featured": false
+  },
+  {
+    "id": 55,
+    "name": "Prime Account #55",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 799,
+    "stock": 6,
+    "featured": false
+  },
+  {
+    "id": 56,
+    "name": "Rare Account #56",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 999,
+    "stock": 13,
+    "featured": false
+  },
+  {
+    "id": 57,
+    "name": "Gaming Voucher #57",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 49,
+    "stock": 20,
+    "featured": false
+  },
+  {
+    "id": 58,
+    "name": "Gift Card #58",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 79,
+    "stock": 7,
+    "featured": false
+  },
+  {
+    "id": 59,
+    "name": "Special Bundle #59",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 99,
+    "stock": 14,
+    "featured": false
+  },
+  {
+    "id": 60,
+    "name": "Event Pack #60",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 149,
+    "stock": 1,
+    "featured": false
+  },
+  {
+    "id": 61,
+    "name": "Diamond Pack #61",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 199,
+    "stock": 8,
+    "featured": false
+  },
+  {
+    "id": 62,
+    "name": "UC Pack #62",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 249,
+    "stock": 15,
+    "featured": false
+  },
+  {
+    "id": 63,
+    "name": "CP Pack #63",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 299,
+    "stock": 2,
+    "featured": false
+  },
+  {
+    "id": 64,
+    "name": "Premium Pack #64",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 349,
+    "stock": 9,
+    "featured": false
+  },
+  {
+    "id": 65,
+    "name": "Starter Pack #65",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 399,
+    "stock": 16,
+    "featured": false
+  },
+  {
+    "id": 66,
+    "name": "Pro Pack #66",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 499,
+    "stock": 3,
+    "featured": false
+  },
+  {
+    "id": 67,
+    "name": "Elite Pack #67",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 599,
+    "stock": 10,
+    "featured": false
+  },
+  {
+    "id": 68,
+    "name": "Ultimate Pack #68",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 699,
+    "stock": 17,
+    "featured": false
+  },
+  {
+    "id": 69,
+    "name": "Legendary Bundle #69",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 799,
+    "stock": 4,
+    "featured": false
+  },
+  {
+    "id": 70,
+    "name": "Rare Bundle #70",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 999,
+    "stock": 11,
+    "featured": false
+  },
+  {
+    "id": 71,
+    "name": "Limited Bundle #71",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 49,
+    "stock": 18,
+    "featured": false
+  },
+  {
+    "id": 72,
+    "name": "Weapon Skin #72",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 79,
+    "stock": 5,
+    "featured": false
+  },
+  {
+    "id": 73,
+    "name": "Character Pack #73",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 99,
+    "stock": 12,
+    "featured": false
+  },
+  {
+    "id": 74,
+    "name": "Battle Pass #74",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 149,
+    "stock": 19,
+    "featured": false
+  },
+  {
+    "id": 75,
+    "name": "Prime Account #75",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 199,
+    "stock": 6,
+    "featured": false
+  },
+  {
+    "id": 76,
+    "name": "Rare Account #76",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 249,
+    "stock": 13,
+    "featured": false
+  },
+  {
+    "id": 77,
+    "name": "Gaming Voucher #77",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 299,
+    "stock": 20,
+    "featured": false
+  },
+  {
+    "id": 78,
+    "name": "Gift Card #78",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 349,
+    "stock": 7,
+    "featured": false
+  },
+  {
+    "id": 79,
+    "name": "Special Bundle #79",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 399,
+    "stock": 14,
+    "featured": false
+  },
+  {
+    "id": 80,
+    "name": "Event Pack #80",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 499,
+    "stock": 1,
+    "featured": false
+  },
+  {
+    "id": 81,
+    "name": "Diamond Pack #81",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 599,
+    "stock": 8,
+    "featured": false
+  },
+  {
+    "id": 82,
+    "name": "UC Pack #82",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 699,
+    "stock": 15,
+    "featured": false
+  },
+  {
+    "id": 83,
+    "name": "CP Pack #83",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 799,
+    "stock": 2,
+    "featured": false
+  },
+  {
+    "id": 84,
+    "name": "Premium Pack #84",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 999,
+    "stock": 9,
+    "featured": false
+  },
+  {
+    "id": 85,
+    "name": "Starter Pack #85",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 49,
+    "stock": 16,
+    "featured": false
+  },
+  {
+    "id": 86,
+    "name": "Pro Pack #86",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 79,
+    "stock": 3,
+    "featured": false
+  },
+  {
+    "id": 87,
+    "name": "Elite Pack #87",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 99,
+    "stock": 10,
+    "featured": false
+  },
+  {
+    "id": 88,
+    "name": "Ultimate Pack #88",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 149,
+    "stock": 17,
+    "featured": false
+  },
+  {
+    "id": 89,
+    "name": "Legendary Bundle #89",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 199,
+    "stock": 4,
+    "featured": false
+  },
+  {
+    "id": 90,
+    "name": "Rare Bundle #90",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 249,
+    "stock": 11,
+    "featured": false
+  },
+  {
+    "id": 91,
+    "name": "Limited Bundle #91",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 299,
+    "stock": 18,
+    "featured": false
+  },
+  {
+    "id": 92,
+    "name": "Weapon Skin #92",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 349,
+    "stock": 5,
+    "featured": false
+  },
+  {
+    "id": 93,
+    "name": "Character Pack #93",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 399,
+    "stock": 12,
+    "featured": false
+  },
+  {
+    "id": 94,
+    "name": "Battle Pass #94",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 499,
+    "stock": 19,
+    "featured": false
+  },
+  {
+    "id": 95,
+    "name": "Prime Account #95",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 599,
+    "stock": 6,
+    "featured": false
+  },
+  {
+    "id": 96,
+    "name": "Rare Account #96",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 699,
+    "stock": 13,
+    "featured": false
+  },
+  {
+    "id": 97,
+    "name": "Gaming Voucher #97",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 799,
+    "stock": 20,
+    "featured": false
+  },
+  {
+    "id": 98,
+    "name": "Gift Card #98",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 999,
+    "stock": 7,
+    "featured": false
+  },
+  {
+    "id": 99,
+    "name": "Special Bundle #99",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 49,
+    "stock": 14,
+    "featured": false
+  },
+  {
+    "id": 100,
+    "name": "Event Pack #100",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 79,
+    "stock": 1,
+    "featured": false
+  },
+  {
+    "id": 101,
+    "name": "Diamond Pack #101",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 99,
+    "stock": 8,
+    "featured": false
+  },
+  {
+    "id": 102,
+    "name": "UC Pack #102",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 149,
+    "stock": 15,
+    "featured": false
+  },
+  {
+    "id": 103,
+    "name": "CP Pack #103",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 199,
+    "stock": 2,
+    "featured": false
+  },
+  {
+    "id": 104,
+    "name": "Premium Pack #104",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 249,
+    "stock": 9,
+    "featured": false
+  },
+  {
+    "id": 105,
+    "name": "Starter Pack #105",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 299,
+    "stock": 16,
+    "featured": false
+  },
+  {
+    "id": 106,
+    "name": "Pro Pack #106",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 349,
+    "stock": 3,
+    "featured": false
+  },
+  {
+    "id": 107,
+    "name": "Elite Pack #107",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 399,
+    "stock": 10,
+    "featured": false
+  },
+  {
+    "id": 108,
+    "name": "Ultimate Pack #108",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 499,
+    "stock": 17,
+    "featured": false
+  },
+  {
+    "id": 109,
+    "name": "Legendary Bundle #109",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 599,
+    "stock": 4,
+    "featured": false
+  },
+  {
+    "id": 110,
+    "name": "Rare Bundle #110",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 699,
+    "stock": 11,
+    "featured": false
+  },
+  {
+    "id": 111,
+    "name": "Limited Bundle #111",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 799,
+    "stock": 18,
+    "featured": false
+  },
+  {
+    "id": 112,
+    "name": "Weapon Skin #112",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 999,
+    "stock": 5,
+    "featured": false
+  },
+  {
+    "id": 113,
+    "name": "Character Pack #113",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 49,
+    "stock": 12,
+    "featured": false
+  },
+  {
+    "id": 114,
+    "name": "Battle Pass #114",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 79,
+    "stock": 19,
+    "featured": false
+  },
+  {
+    "id": 115,
+    "name": "Prime Account #115",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 99,
+    "stock": 6,
+    "featured": false
+  },
+  {
+    "id": 116,
+    "name": "Rare Account #116",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 149,
+    "stock": 13,
+    "featured": false
+  },
+  {
+    "id": 117,
+    "name": "Gaming Voucher #117",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 199,
+    "stock": 20,
+    "featured": false
+  },
+  {
+    "id": 118,
+    "name": "Gift Card #118",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 249,
+    "stock": 7,
+    "featured": false
+  },
+  {
+    "id": 119,
+    "name": "Special Bundle #119",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 299,
+    "stock": 14,
+    "featured": false
+  },
+  {
+    "id": 120,
+    "name": "Event Pack #120",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 349,
+    "stock": 1,
+    "featured": false
+  },
+  {
+    "id": 121,
+    "name": "Diamond Pack #121",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 399,
+    "stock": 8,
+    "featured": false
+  },
+  {
+    "id": 122,
+    "name": "UC Pack #122",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 499,
+    "stock": 15,
+    "featured": false
+  },
+  {
+    "id": 123,
+    "name": "CP Pack #123",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 599,
+    "stock": 2,
+    "featured": false
+  },
+  {
+    "id": 124,
+    "name": "Premium Pack #124",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 699,
+    "stock": 9,
+    "featured": false
+  },
+  {
+    "id": 125,
+    "name": "Starter Pack #125",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 799,
+    "stock": 16,
+    "featured": false
+  },
+  {
+    "id": 126,
+    "name": "Pro Pack #126",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 999,
+    "stock": 3,
+    "featured": false
+  },
+  {
+    "id": 127,
+    "name": "Elite Pack #127",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 49,
+    "stock": 10,
+    "featured": false
+  },
+  {
+    "id": 128,
+    "name": "Ultimate Pack #128",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 79,
+    "stock": 17,
+    "featured": false
+  },
+  {
+    "id": 129,
+    "name": "Legendary Bundle #129",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 99,
+    "stock": 4,
+    "featured": false
+  },
+  {
+    "id": 130,
+    "name": "Rare Bundle #130",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 149,
+    "stock": 11,
+    "featured": false
+  },
+  {
+    "id": 131,
+    "name": "Limited Bundle #131",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 199,
+    "stock": 18,
+    "featured": false
+  },
+  {
+    "id": 132,
+    "name": "Weapon Skin #132",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 249,
+    "stock": 5,
+    "featured": false
+  },
+  {
+    "id": 133,
+    "name": "Character Pack #133",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 299,
+    "stock": 12,
+    "featured": false
+  },
+  {
+    "id": 134,
+    "name": "Battle Pass #134",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 349,
+    "stock": 19,
+    "featured": false
+  },
+  {
+    "id": 135,
+    "name": "Prime Account #135",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 399,
+    "stock": 6,
+    "featured": false
+  },
+  {
+    "id": 136,
+    "name": "Rare Account #136",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 499,
+    "stock": 13,
+    "featured": false
+  },
+  {
+    "id": 137,
+    "name": "Gaming Voucher #137",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 599,
+    "stock": 20,
+    "featured": false
+  },
+  {
+    "id": 138,
+    "name": "Gift Card #138",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 699,
+    "stock": 7,
+    "featured": false
+  },
+  {
+    "id": 139,
+    "name": "Special Bundle #139",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 799,
+    "stock": 14,
+    "featured": false
+  },
+  {
+    "id": 140,
+    "name": "Event Pack #140",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 999,
+    "stock": 1,
+    "featured": false
+  },
+  {
+    "id": 141,
+    "name": "Diamond Pack #141",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 49,
+    "stock": 8,
+    "featured": false
+  },
+  {
+    "id": 142,
+    "name": "UC Pack #142",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 79,
+    "stock": 15,
+    "featured": false
+  },
+  {
+    "id": 143,
+    "name": "CP Pack #143",
+    "game": "GTA",
+    "category": "Battle Pass",
+    "price": 99,
+    "stock": 2,
+    "featured": false
+  },
+  {
+    "id": 144,
+    "name": "Premium Pack #144",
+    "game": "Gaming",
+    "category": "Characters",
+    "price": 149,
+    "stock": 9,
+    "featured": false
+  },
+  {
+    "id": 145,
+    "name": "Starter Pack #145",
+    "game": "Free Fire",
+    "category": "Top Up",
+    "price": 199,
+    "stock": 16,
+    "featured": false
+  },
+  {
+    "id": 146,
+    "name": "Pro Pack #146",
+    "game": "BGMI",
+    "category": "Accounts",
+    "price": 249,
+    "stock": 3,
+    "featured": false
+  },
+  {
+    "id": 147,
+    "name": "Elite Pack #147",
+    "game": "COD Mobile",
+    "category": "Skins",
+    "price": 299,
+    "stock": 10,
+    "featured": false
+  },
+  {
+    "id": 148,
+    "name": "Ultimate Pack #148",
+    "game": "Minecraft",
+    "category": "Bundles",
+    "price": 349,
+    "stock": 17,
+    "featured": false
+  },
+  {
+    "id": 149,
+    "name": "Legendary Bundle #149",
+    "game": "Roblox",
+    "category": "Gift Cards",
+    "price": 399,
+    "stock": 4,
+    "featured": false
+  },
+  {
+    "id": 150,
+    "name": "Rare Bundle #150",
+    "game": "Valorant",
+    "category": "Game Items",
+    "price": 499,
+    "stock": 11,
+    "featured": false
   }
 ]
