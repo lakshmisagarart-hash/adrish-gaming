@@ -5,190 +5,190 @@
 <meta name="viewport"
 content="width=device-width,initial-scale=1">
 
-<title>ADRISH X GAMING</title>
+<title>ADRISH GAMING</title>
 
 <style>
-*{box-sizing:border-box}
-
-body{
- margin:0;
- background:#05060d;
- color:white;
- font-family:Arial,sans-serif
+* {
+  box-sizing:border-box;
 }
 
-header{
- position:sticky;
- top:0;
- z-index:20;
- padding:18px;
- background:#0b0d19ee;
- backdrop-filter:blur(18px);
- border-bottom:1px solid #252a42
+body {
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#07070b;
+  color:#fff;
 }
 
-.nav{
- max-width:1200px;
- margin:auto;
- display:flex;
- justify-content:space-between;
- align-items:center
+header {
+  position:sticky;
+  top:0;
+  z-index:20;
+  padding:18px;
+  background:#0d0d14;
+  border-bottom:1px solid #272738;
 }
 
-.logo{
- font-size:23px;
- font-weight:1000
+.logo {
+  font-size:25px;
+  font-weight:900;
 }
 
-.logo span{
- color:#8b5cf6
+.logo span {
+  color:#8b5cf6;
 }
 
-.hero{
- padding:75px 20px;
- text-align:center;
- background:
- radial-gradient(circle at 50% 0,
- #422b91,#17112e 35%,#05060d 72%)
+.hero {
+  padding:35px 18px;
+  text-align:center;
 }
 
-.hero h1{
- margin:0;
- font-size:clamp(42px,9vw,78px);
- font-weight:1000
+.hero h1 {
+  font-size:42px;
+  margin:10px 0;
 }
 
-.hero p{
- color:#aeb4c8;
- font-size:18px
+.hero p {
+  color:#aaa;
 }
 
-.search{
- width:min(720px,95%);
- padding:17px 20px;
- border-radius:15px;
- border:1px solid #343a55;
- background:#101322;
- color:white;
- font-size:16px;
- outline:none
+.search {
+  width:100%;
+  max-width:650px;
+  padding:15px;
+  border-radius:12px;
+  border:1px solid #333;
+  background:#11111a;
+  color:white;
+  margin:20px auto;
+  display:block;
 }
 
-.wrap{
- max-width:1200px;
- margin:auto;
- padding:30px 20px
+.filters {
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  flex-wrap:wrap;
 }
 
-.filters{
- display:flex;
- gap:10px;
- overflow:auto;
- padding-bottom:20px
+.filters button {
+  padding:10px 16px;
+  border:1px solid #333;
+  background:#11111a;
+  color:#fff;
+  border-radius:10px;
 }
 
-button{
- border:0;
- border-radius:11px;
- padding:11px 16px;
- background:#8b5cf6;
- color:white;
- font-weight:bold;
- cursor:pointer
+.grid {
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+  display:grid;
+  grid-template-columns:
+    repeat(auto-fill,minmax(240px,1fr));
+  gap:16px;
 }
 
-.filters button{
- background:#111526;
- border:1px solid #2b3049;
- white-space:nowrap
+.card {
+  background:#11111a;
+  border:1px solid #272738;
+  border-radius:16px;
+  padding:18px;
 }
 
-.grid{
- display:grid;
- grid-template-columns:
- repeat(auto-fit,minmax(230px,1fr));
- gap:18px
+.badge {
+  display:inline-block;
+  padding:5px 9px;
+  border-radius:8px;
+  background:#20153a;
+  color:#b794ff;
+  font-size:12px;
 }
 
-.card{
- padding:20px;
- border-radius:20px;
- background:
- linear-gradient(145deg,#14182b,#0d101c);
- border:1px solid #292f48;
- transition:.2s
+.price {
+  font-size:25px;
+  font-weight:bold;
+  margin:14px 0;
 }
 
-.card:hover{
- transform:translateY(-5px);
- border-color:#8b5cf6;
- box-shadow:0 15px 45px #0008
+.buy {
+  width:100%;
+  padding:13px;
+  border:0;
+  border-radius:10px;
+  background:#7c3aed;
+  color:#fff;
+  font-weight:bold;
 }
 
-.badge{
- color:#bca8ff;
- font-size:12px;
- font-weight:bold
+.buy:disabled {
+  opacity:.4;
 }
 
-.price{
- font-size:28px;
- font-weight:1000;
- margin:17px 0
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:50;
+  background:rgba(0,0,0,.8);
+  padding:20px;
+  overflow:auto;
 }
 
-.stock{
- color:#8f96aa;
- font-size:13px
+.box {
+  max-width:500px;
+  margin:40px auto;
+  padding:24px;
+  background:#11111a;
+  border:1px solid #333;
+  border-radius:18px;
 }
 
-.buy{
- width:100%
+input {
+  width:100%;
+  padding:13px;
+  margin:8px 0;
+  background:#090910;
+  color:white;
+  border:1px solid #333;
+  border-radius:9px;
 }
 
-.paybox{
- margin:50px auto 20px;
- max-width:600px;
- padding:30px;
- text-align:center;
- background:#111526;
- border:1px solid #303650;
- border-radius:22px
+.pay {
+  width:100%;
+  padding:15px;
+  margin-top:10px;
+  border:0;
+  border-radius:10px;
+  background:#16a34a;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
 }
 
-.qr{
- width:min(300px,90%);
- background:white;
- padding:8px;
- border-radius:15px
+.close {
+  float:right;
+  cursor:pointer;
 }
 
-.upi{
- font-size:18px;
- font-weight:bold;
- color:#bdaaff;
- margin:15px
+.status {
+  margin-top:15px;
+  padding:12px;
+  border-radius:10px;
+  background:#191923;
 }
 
-.upibtn{
- display:inline-block;
- padding:13px 20px;
- background:#8b5cf6;
- color:white;
- text-decoration:none;
- border-radius:11px;
- font-weight:bold
+.credentials {
+  margin-top:15px;
+  padding:15px;
+  background:#102316;
+  border:1px solid #245d32;
+  border-radius:12px;
 }
 
-.note{
- color:#8f96aa;
- font-size:13px
-}
-
-footer{
- text-align:center;
- color:#70778b;
- padding:45px 20px
+footer {
+  padding:40px 20px;
+  text-align:center;
+  color:#777;
 }
 </style>
 </head>
@@ -196,234 +196,343 @@ footer{
 <body>
 
 <header>
-<div class="nav">
-<div class="logo">
-🔥 ADRISH X <span>GAMING</span>
-</div>
-
-<button onclick="location.href='/admin'">
-👑 ADMIN
-</button>
-</div>
+  <div class="logo">
+    ADRISH <span>GAMING</span>
+  </div>
 </header>
 
 <section class="hero">
+  <h1>🎮 Gaming Marketplace</h1>
+  <p>Fast orders • UPI payment • Verified delivery</p>
 
-<h1>LEVEL UP ⚡</h1>
+  <input
+    class="search"
+    id="search"
+    placeholder="Search Free Fire accounts..."
+    oninput="loadProducts()"
+  >
 
-<p>
-Gaming Marketplace • Top Ups • Accounts • Items
-</p>
-
-<input
- id="search"
- class="search"
- placeholder="Search Free Fire, BGMI, skins..."
- oninput="load()">
-
+  <div class="filters">
+    <button onclick="setLevel('all')">All</button>
+    <button onclick="setLevel('50+')">50+</button>
+    <button onclick="setLevel('60+')">60+</button>
+    <button onclick="setLevel('70+')">70+</button>
+    <button onclick="setLevel('80+')">80+</button>
+  </div>
 </section>
 
-<main class="wrap">
+<div class="grid" id="products"></div>
 
-<div class="filters">
+<div class="modal" id="modal">
+  <div class="box">
 
-<button onclick="setGame('')">
-ALL
-</button>
+    <span class="close" onclick="closeModal()">✕</span>
 
-<button onclick="setGame('Free Fire')">
-FREE FIRE
-</button>
+    <h2 id="modalTitle">Create Order</h2>
 
-<button onclick="setGame('BGMI')">
-BGMI
-</button>
+    <p id="modalPrice"></p>
 
-<button onclick="setGame('COD Mobile')">
-COD MOBILE
-</button>
+    <input
+      id="customer"
+      placeholder="Your name"
+    >
 
-<button onclick="setGame('Minecraft')">
-MINECRAFT
-</button>
+    <button class="pay" onclick="createOrder()">
+      💳 PAY NOW & OPEN UPI APP
+    </button>
 
-<button onclick="setGame('Roblox')">
-ROBLOX
-</button>
+    <div id="result"></div>
 
-<button onclick="setGame('Valorant')">
-VALORANT
-</button>
-
-<button onclick="setCat('Top Up')">
-TOP UP
-</button>
-
-<button onclick="setCat('Accounts')">
-ACCOUNTS
-</button>
-
+  </div>
 </div>
-
-<h2>🔥 Marketplace</h2>
-
-<div id="products" class="grid"></div>
-
-<!-- UPI PAYMENT -->
-
-<div class="paybox">
-
-<h2>💳 PAY WITH UPI</h2>
-
-<p>
-Scan the QR or use any UPI app.
-</p>
-
-<img
- class="qr"
- src="/qr.png"
- alt="UPI QR Scanner"
- onerror="this.style.display='none'">
-
-<div class="upi">
-UPI ID: 9733942789@nyes
-</div>
-
-<a
- class="upibtn"
- href="upi://pay?pa=9733942789@nyes&pn=MITHU%20DAS">
-📲 PAY USING UPI APP
-</a>
-
-<p class="note">
-After payment, keep your UTR/transaction ID.
-</p>
-
-</div>
-
-</main>
 
 <footer>
-🔥 ADRISH X GAMING<br>
-Gaming Marketplace
+  ADRISH GAMING • Gaming Marketplace
 </footer>
 
 <script>
+let currentProduct = null;
+let currentLevel = "all";
 
-let game="";
-let category="";
-
-function setGame(x){
- game=x;
- category="";
- load();
+function setLevel(level) {
+  currentLevel = level;
+  loadProducts();
 }
 
-function setCat(x){
- category=x;
- game="";
- load();
+async function loadProducts() {
+
+  const q =
+    document.getElementById("search").value;
+
+  const url =
+    "/api/products?q=" +
+    encodeURIComponent(q) +
+    "&level=" +
+    encodeURIComponent(currentLevel);
+
+  const response = await fetch(url);
+  const data = await response.json();
+
+  const root =
+    document.getElementById("products");
+
+  root.innerHTML = "";
+
+  data.products.forEach(p => {
+
+    const sold =
+      p.status !== "available" ||
+      p.stock < 1;
+
+    root.innerHTML += `
+      <div class="card">
+
+        <span class="badge">
+          ${p.level} LEVEL
+        </span>
+
+        <h3>${escapeHTML(p.name)}</h3>
+
+        <p>
+          🎮 ${escapeHTML(p.game)}
+        </p>
+
+        <div class="price">
+          ₹${Number(p.price).toLocaleString("en-IN")}
+        </div>
+
+        <p>
+          ${sold ? "❌ Sold Out" : "🟢 Available"}
+        </p>
+
+        <button
+          class="buy"
+          ${sold ? "disabled" : ""}
+          onclick='openOrder(${JSON.stringify(p)})'
+        >
+          ${sold ? "SOLD OUT" : "BUY NOW"}
+        </button>
+
+      </div>
+    `;
+  });
 }
 
-async function load(){
-
- const params=new URLSearchParams();
-
- const q=document.getElementById(
-   "search"
- ).value;
-
- if(q)params.set("q",q);
- if(game)params.set("game",game);
- if(category)params.set("category",category);
-
- const products=
- await fetch("/api/products?"+params)
- .then(r=>r.json());
-
- document.getElementById("products").innerHTML=
- products.length?
-
- products.map(p=>`
-
- <div class="card">
-
- <div class="badge">
- ${p.featured?"⭐ FEATURED • ":""}
- ${p.game} • ${p.category}
- </div>
-
- <h2>${p.name}</h2>
-
- <div class="price">
- ₹${p.price}
- </div>
-
- <div class="stock">
- Stock: ${p.stock}
- </div>
-
- <br>
-
- <button
- class="buy"
- onclick="buy(${p.id})"
- ${p.stock<=0?"disabled":""}>
-
- ${p.stock>0?"BUY NOW":"SOLD OUT"}
-
- </button>
-
- </div>
-
- `).join("")
-
- :"No products found.";
+function escapeHTML(value) {
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
 }
 
-async function buy(id){
+function openOrder(product) {
 
- const buyer=prompt(
-   "Enter your name:"
- );
+  currentProduct = product;
 
- if(!buyer)return;
+  document.getElementById("modalTitle")
+    .innerText = product.name;
 
- const r=await fetch(
-   "/api/orders",
-   {
-     method:"POST",
-     headers:{
-       "Content-Type":"application/json"
-     },
-     body:JSON.stringify({
-       product_id:id,
-       buyer
-     })
-   }
- );
+  document.getElementById("modalPrice")
+    .innerText =
+      "Amount: ₹" +
+      Number(product.price).toLocaleString("en-IN");
 
- const d=await r.json();
+  document.getElementById("result").innerHTML = "";
 
- if(d.success){
-
-   alert(
-    "Order #"+d.order.id+
-    " created!\\n"+
-    "Pay via UPI: 9733942789@nyes"
-   );
-
- }else{
-
-   alert("❌ "+d.error);
-
- }
-
- load();
+  document.getElementById("modal")
+    .style.display = "block";
 }
 
-load();
+function closeModal() {
+  document.getElementById("modal")
+    .style.display = "none";
+}
 
+async function createOrder() {
+
+  if (!currentProduct) return;
+
+  const customer =
+    document.getElementById("customer").value.trim()
+    || "Customer";
+
+  const response = await fetch(
+    "/api/orders",
+    {
+      method:"POST",
+
+      headers:{
+        "Content-Type":"application/json"
+      },
+
+      body:JSON.stringify({
+        productId:currentProduct.id,
+        customer
+      })
+    }
+  );
+
+  const data = await response.json();
+
+  if (!data.success) {
+    document.getElementById("result").innerHTML =
+      `<div class="status">❌ ${escapeHTML(data.message)}</div>`;
+    return;
+  }
+
+  document.getElementById("result").innerHTML = `
+    <div class="status">
+
+      <b>Order #${data.order.id}</b>
+
+      <p>
+        Amount:
+        ₹${Number(data.order.amount)
+          .toLocaleString("en-IN")}
+      </p>
+
+      <p>
+        Payment pending
+      </p>
+
+      <button
+        class="pay"
+        onclick="openUPI('${encodeURIComponent(data.payment.upiUrl)}')"
+      >
+        🚀 OPEN PAYMENT APP
+      </button>
+
+      <p style="color:#999;font-size:12px">
+        Payment verify hone ke baad order status
+        se credentials reveal honge.
+      </p>
+
+      <input
+        id="trackId"
+        placeholder="Enter Order ID"
+      >
+
+      <button
+        class="buy"
+        onclick="trackOrder()"
+      >
+        🔎 TRACK ORDER
+      </button>
+
+      <div id="tracking"></div>
+
+    </div>
+  `;
+
+  /*
+    Automatically try opening Android UPI.
+    If browser blocks it, customer can press
+    OPEN PAYMENT APP.
+  */
+
+  openUPI(
+    encodeURIComponent(data.payment.upiUrl)
+  );
+}
+
+function openUPI(encoded) {
+
+  const url = decodeURIComponent(encoded);
+
+  /*
+    Android handles upi:// through installed
+    UPI/payment apps.
+  */
+
+  window.location.href = url;
+}
+
+async function trackOrder() {
+
+  const id =
+    document.getElementById("trackId").value.trim();
+
+  if (!id) return;
+
+  const response =
+    await fetch("/api/orders/" + encodeURIComponent(id));
+
+  const data = await response.json();
+
+  const box =
+    document.getElementById("tracking");
+
+  if (!data.success) {
+    box.innerHTML =
+      `<div class="status">❌ Order not found</div>`;
+    return;
+  }
+
+  let html = `
+    <div class="status">
+
+      <b>Order #${data.order.id}</b>
+
+      <p>${escapeHTML(data.order.product)}</p>
+
+      <p>
+        Payment:
+        ${data.order.paymentStatus === "verified"
+          ? "✅ Verified"
+          : "🟡 Pending"}
+      </p>
+
+      <p>
+        Status: ${escapeHTML(data.order.status)}
+      </p>
+  `;
+
+  if (data.order.credentials) {
+
+    html += `
+      <div class="credentials">
+
+        <b>🎮 ACCOUNT DETAILS</b>
+
+        <p>
+          ID:
+          <strong>
+            ${escapeHTML(
+              data.order.credentials.accountId
+            )}
+          </strong>
+        </p>
+
+        <p>
+          Password:
+          <strong>
+            ${escapeHTML(
+              data.order.credentials.password
+            )}
+          </strong>
+        </p>
+
+      </div>
+    `;
+
+  } else {
+
+    html += `
+      <p style="color:#aaa">
+        Credentials payment verification ke baad
+        available honge.
+      </p>
+    `;
+  }
+
+  html += `</div>`;
+
+  box.innerHTML = html;
+}
+
+loadProducts();
 </script>
 
 </body>

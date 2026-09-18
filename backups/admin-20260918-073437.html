@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>ADRISH X ADMIN</title>
+
+<style>
+body{
+ margin:0;
+ background:#05060d;
+ color:white;
+ font-family:Arial
+}
+
+.wrap{
+ max-width:1000px;
+ margin:auto;
+ padding:25px
+}
+
+.card{
+ background:#111526;
+ border:1px solid #292f48;
+ border-radius:17px;
+ padding:20px;
+ margin:15px 0
+}
+
+input,select{
+ width:100%;
+ padding:13px;
+ margin:7px 0 12px;
+ border-radius:10px;
+ border:1px solid #30364f;
+ background:#090c17;
+ color:white
+}
+
+button{
+ padding:11px 15px;
+ border:0;
+ border-radius:10px;
+ background:#8b5cf6;
+ color:white;
+ font-weight:bold;
+ margin:4px
+}
+
+.stats{
+ display:grid;
+ grid-template-columns:
+ repeat(3,1fr);
+ gap:12px
+}
+
+.stat{
+ background:#121629;
+ padding:20px;
+ border-radius:15px;
+ text-align:center
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<h1>👑 ADRISH X ADMIN</h1>
+
+<p>ADRISH X GAMING MARKET</p>
+
+<div id="stats" class="stats"></div>
+
+<div class="card">
+
+<h2>➕ Add Product</h2>
+
+<input id="name"
+placeholder="Product name">
+
+<input id="game"
+placeholder="Game">
+
+<input id="category"
+placeholder="Category">
+
+<input id="price"
+type="number"
+placeholder="Price">
+
+<input id="stock"
+type="number"
+value="1">
+
+<select id="featured">
+<option value="false">
+Normal
+</option>
+
+<option value="true">
+Featured
+</option>
+</select>
+
+<button onclick="add()">
+ADD PRODUCT
+</button>
+
+</div>
+
+<h2>📦 Products</h2>
+
+<div id="products"></div>
+
+<h2>🧾 Orders</h2>
+
+<div id="orders"></div>
+
+</div>
+
+<script>
+
+async function refresh(){
+
+ const s=
+ await fetch("/api/stats")
+ .then(r=>r.json());
+
+ document.getElementById(
+ "stats"
+ ).innerHTML=`
+
+ <div class="stat">
+ <b>${s.products}</b>
+ <br>Products
+ </div>
+
+ <div class="stat">
+ <b>${s.orders}</b>
+ <br>Orders
+ </div>
+
+ <div class="stat">
+ <b>₹${s.sales}</b>
+ <br>Sales
+ </div>
+ `;
+
+ const p=
+ await fetch("/api/products")
+ .then(r=>r.json());
+
+ document.getElementById(
+ "products"
+ ).innerHTML=p.map(x=>`
+
+ <div class="card">
+
+ <b>${x.name}</b>
+
+ <p>
+ ${x.game} •
+ ${x.category} •
+ ₹${x.price} •
+ Stock ${x.stock}
+ </p>
+
+ <button
+ onclick="del(${x.id})">
+ DELETE
+ </button>
+
+ </div>
+
+ `).join("");
+
+ const o=
+ await fetch("/api/orders")
+ .then(r=>r.json());
+
+ document.getElementById(
+ "orders"
+ ).innerHTML=o.map(x=>`
+
+ <div class="card">
+
+ <b>
+ Order #${x.id}
+ </b>
+
+ <p>
+ ${x.product} —
+ ₹${x.price}
+ </p>
+
+ <p>
+ Buyer: ${x.buyer}
+ </p>
+
+ <p>
+ UPI: ${x.upi_id}
+ </p>
+
+ <p>
+ Status: ${x.status}
+ </p>
+
+ <button
+ onclick="status(${x.id},'Paid')">
+ PAYMENT VERIFIED
+ </button>
+
+ <button
+ onclick="status(${x.id},'Delivered')">
+ DELIVERED
+ </button>
+
+ </div>
+
+ `).join("");
+}
+
+async function add(){
+
+ await fetch(
+ "/api/products",
+ {
+  method:"POST",
+  headers:{
+   "Content-Type":"application/json"
+  },
+  body:JSON.stringify({
+   name:name.value,
+   game:game.value,
+   category:category.value,
+   price:price.value,
+   stock:stock.value,
+   featured:featured.value
+  })
+ }
+ );
+
+ alert("✅ Product added");
+
+ refresh();
+}
+
+async function del(id){
+
+ if(!confirm(
+  "Delete product?"
+ ))return;
+
+ await fetch(
+  "/api/products/"+id,
+  {method:"DELETE"}
+ );
+
+ refresh();
+}
+
+async function status(id,s){
+
+ await fetch(
+ "/api/orders/"+id,
+ {
+  method:"PATCH",
+  headers:{
+   "Content-Type":"application/json"
+  },
+  body:JSON.stringify({
+   status:s
+  })
+ }
+ );
+
+ refresh();
+}
+
+refresh();
+
+</script>
+
+</body>
+</html>

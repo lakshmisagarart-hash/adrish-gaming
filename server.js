@@ -1,184 +1,318 @@
-const express=require("express");
-const fs=require("fs");
-const path=require("path");
+const express = require("express");
+const fs = require("fs");
+const path = require("path");
 
-const app=express();
-const PORT=process.env.PORT||10000;
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-const DATA=path.join(__dirname,"data");
-const PRODUCTS=path.join(DATA,"products.json");
-const ORDERS=path.join(DATA,"orders.json");
+const DATA = path.join(__dirname, "data");
+const PRODUCTS = path.join(DATA, "products.json");
+const ORDERS = path.join(DATA, "orders.json");
+
+const UPI_ID = "9733942789@nyes";
+const UPI_NAME = "MITHU DAS";
 
 app.use(express.json());
-app.use(express.urlencoded({extended:true}));
-app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "public")));
 
-function read(file){
- try{
-   return JSON.parse(fs.readFileSync(file,"utf8"));
- }catch{
-   return [];
- }
+function readJSON(file, fallback) {
+  try {
+    if (!fs.existsSync(file)) return fallback;
+    return JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch {
+    return fallback;
+  }
 }
 
-function write(file,data){
- fs.writeFileSync(file,JSON.stringify(data,null,2));
+function writeJSON(file, data) {
+  fs.writeFileSync(file, JSON.stringify(data, null, 2));
 }
 
-app.get("/api/products",(req,res)=>{
+function products() {
+  return readJSON(PRODUCTS, []);
+}
 
- let products=read(PRODUCTS);
- const {q,game,category}=req.query;
+function orders() {
+  return readJSON(ORDERS, []);
+}
 
- if(q){
-   const s=q.toLowerCase();
+function saveOrders(data) {
+  writeJSON(ORDERS, data);
+}
 
-   products=products.filter(p=>
-     p.name.toLowerCase().includes(s) ||
-     p.game.toLowerCase().includes(s) ||
-     p.category.toLowerCase().includes(s)
-   );
- }
+function nextOrderId(list) {
+  if (!list.length) return 10001;
 
- if(game)
-   products=products.filter(p=>p.game===game);
+  return Math.max(
+    ...list.map(x => Number(x.id) || 10000)
+  ) + 1;
+}
 
- if(category)
-   products=products.filter(p=>p.category===category);
+/* =========================================================
+   PRODUCTS
+========================================================= */
 
- res.json(products);
+app.get("/api/products", (req, res) => {
+  const all = products();
+
+  const q = String(req.query.q || "").toLowerCase();
+  const level = String(req.query.level || "all");
+
+  let result = all;
+
+  if (q) {
+    result = result.filter(p =>
+      `${p.name} ${p.game} ${p.category} ${p.level}`
+        .toLowerCase()
+        .includes(q)
+    );
+  }
+
+  if (level !== "all") {
+    result = result.filter(p => p.level === level);
+  }
+
+  res.json({
+    success: true,
+    total: result.length,
+    products: result.map(p => ({
+      id: p.id,
+      name: p.name,
+      game: p.game,
+      category: p.category,
+      level: p.level,
+      price: p.price,
+      stock: p.stock,
+      status: p.status
+    }))
+  });
 });
 
-app.post("/api/products",(req,res)=>{
+/* =========================================================
+   CREATE ORDER
+========================================================= */
 
- const products=read(PRODUCTS);
+app.post("/api/orders", (req, res) => {
+  const productId = Number(req.body.productId);
+  const customer = String(req.body.customer || "Customer").trim();
 
- const product={
-   id:Date.now(),
-   name:String(req.body.name||"Product"),
-   game:String(req.body.game||"Gaming"),
-   category:String(req.body.category||"Other"),
-   price:Number(req.body.price||0),
-   stock:Number(req.body.stock||1),
-   featured:req.body.featured==="true"
- };
+  const list = products();
 
- products.push(product);
- write(PRODUCTS,products);
+  const product = list.find(p => p.id === productId);
 
- res.json({success:true,product});
+  if (!product) {
+    return res.status(404).json({
+      success: false,
+      message: "Product not found"
+    });
+  }
+
+  if (product.status !== "available" || product.stock < 1) {
+    return res.status(400).json({
+      success: false,
+      message: "Out of stock"
+    });
+  }
+
+  const allOrders = orders();
+
+  const order = {
+    id: nextOrderId(allOrders),
+
+    productId: product.id,
+    productName: product.name,
+
+    customer,
+
+    amount: Number(product.price),
+
+    status: "awaiting_payment",
+    paymentStatus: "pending",
+
+    createdAt: new Date().toISOString()
+  };
+
+  allOrders.push(order);
+  saveOrders(allOrders);
+
+  /*
+    Reserve one item.
+    Credentials remain hidden until admin verifies payment.
+  */
+  product.stock = Math.max(0, product.stock - 1);
+
+  if (product.stock === 0) {
+    product.status = "sold_out";
+  }
+
+  writeJSON(PRODUCTS, list);
+
+  const upiUrl =
+    `upi://pay?pa=${encodeURIComponent(UPI_ID)}` +
+    `&pn=${encodeURIComponent(UPI_NAME)}` +
+    `&am=${encodeURIComponent(order.amount.toFixed(2))}` +
+    `&cu=INR` +
+    `&tn=${encodeURIComponent(
+      "Adrish Gaming Order #" + order.id
+    )}`;
+
+  res.json({
+    success: true,
+
+    order: {
+      id: order.id,
+      product: order.productName,
+      amount: order.amount,
+      status: order.status,
+      paymentStatus: order.paymentStatus
+    },
+
+    payment: {
+      upiId: UPI_ID,
+      name: UPI_NAME,
+      upiUrl
+    }
+  });
 });
 
-app.delete("/api/products/:id",(req,res)=>{
+/* =========================================================
+   ORDER STATUS
+========================================================= */
 
- const products=read(PRODUCTS)
-   .filter(p=>p.id!=req.params.id);
+app.get("/api/orders/:id", (req, res) => {
+  const id = Number(req.params.id);
 
- write(PRODUCTS,products);
+  const order = orders().find(o => Number(o.id) === id);
 
- res.json({success:true});
+  if (!order) {
+    return res.status(404).json({
+      success: false,
+      message: "Order not found"
+    });
+  }
+
+  const response = {
+    id: order.id,
+    product: order.productName,
+    amount: order.amount,
+    customer: order.customer,
+    status: order.status,
+    paymentStatus: order.paymentStatus,
+    createdAt: order.createdAt
+  };
+
+  /*
+    IMPORTANT:
+    Credentials are ONLY returned after payment verification.
+  */
+
+  if (order.paymentStatus === "verified") {
+    const item = products().find(
+      p => p.id === order.productId
+    );
+
+    if (item) {
+      response.credentials = {
+        accountId: item.account_id,
+        password: item.account_password
+      };
+    }
+  }
+
+  res.json({
+    success: true,
+    order: response
+  });
 });
 
-app.post("/api/orders",(req,res)=>{
+/* =========================================================
+   PAYMENT VERIFICATION
+========================================================= */
 
- const products=read(PRODUCTS);
- const orders=read(ORDERS);
+app.post("/api/admin/orders/:id/verify", (req, res) => {
+  const id = Number(req.params.id);
 
- const product=products.find(
-   p=>p.id==req.body.product_id
- );
+  const allOrders = orders();
 
- if(!product)
-   return res.status(404).json({
-     error:"Product not found"
-   });
+  const index = allOrders.findIndex(
+    o => Number(o.id) === id
+  );
 
- if(product.stock<=0)
-   return res.status(400).json({
-     error:"Out of stock"
-   });
+  if (index === -1) {
+    return res.status(404).json({
+      success: false,
+      message: "Order not found"
+    });
+  }
 
- product.stock--;
+  allOrders[index].paymentStatus = "verified";
+  allOrders[index].status = "paid";
+  allOrders[index].verifiedAt = new Date().toISOString();
 
- const order={
-   id:Date.now(),
-   product_id:product.id,
-   product:product.name,
-   game:product.game,
-   buyer:String(req.body.buyer||"Guest"),
-   price:product.price,
-   payment:"UPI",
-   upi_id:"9733942789@nyes",
-   status:"Payment Pending",
-   created_at:new Date().toISOString()
- };
+  saveOrders(allOrders);
 
- orders.push(order);
-
- write(PRODUCTS,products);
- write(ORDERS,orders);
-
- res.json({
-   success:true,
-   order
- });
+  res.json({
+    success: true,
+    message: "Payment verified"
+  });
 });
 
-app.get("/api/orders",(req,res)=>{
- res.json(read(ORDERS).reverse());
+/* =========================================================
+   ADMIN ORDERS
+========================================================= */
+
+app.get("/api/admin/orders", (req, res) => {
+  res.json({
+    success: true,
+    orders: orders().reverse()
+  });
 });
 
-app.patch("/api/orders/:id",(req,res)=>{
+/* =========================================================
+   STATS
+========================================================= */
 
- const orders=read(ORDERS);
+app.get("/api/admin/stats", (req, res) => {
+  const ps = products();
+  const os = orders();
 
- const order=orders.find(
-   o=>o.id==req.params.id
- );
+  res.json({
+    products: ps.length,
+    availableStock: ps.filter(
+      p => p.status === "available"
+    ).length,
 
- if(!order)
-   return res.status(404).json({
-     error:"Order not found"
-   });
+    orders: os.length,
 
- order.status=String(
-   req.body.status||order.status
- );
+    paidOrders: os.filter(
+      o => o.paymentStatus === "verified"
+    ).length,
 
- write(ORDERS,orders);
-
- res.json({success:true});
+    pendingOrders: os.filter(
+      o => o.paymentStatus !== "verified"
+    ).length
+  });
 });
 
-app.get("/api/stats",(req,res)=>{
+/* =========================================================
+   PAGES
+========================================================= */
 
- const products=read(PRODUCTS);
- const orders=read(ORDERS);
-
- res.json({
-   products:products.length,
-   orders:orders.length,
-   sales:orders.reduce(
-     (sum,o)=>sum+Number(o.price||0),0
-   )
- });
+app.get("/admin", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "public", "admin.html")
+  );
 });
 
-app.get("/admin",(req,res)=>{
- res.sendFile(
-   path.join(__dirname,"public/admin.html")
- );
+app.get("*splat", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "public", "index.html")
+  );
 });
 
-app.get("*",(req,res)=>{
- res.sendFile(
-   path.join(__dirname,"public/index.html")
- );
-});
-
-app.listen(PORT,"0.0.0.0",()=>{
- console.log("");
- console.log("🔥 ADRISH X GAMING ONLINE");
- console.log("PORT: "+PORT);
- console.log("");
+app.listen(PORT, () => {
+  console.log("");
+  console.log("🔥 ADRISH X TOOLS running on port " + PORT);
+  console.log("💳 UPI:", UPI_ID);
 });

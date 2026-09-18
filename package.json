@@ -1,11 +1,11 @@
 {
-  "name":"adrish-x-gaming",
-  "version":"2.0.0",
-  "private":true,
-  "scripts":{
-    "start":"node server.js"
+  "name": "adrish-gaming",
+  "version": "3.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
   },
-  "dependencies":{
-    "express":"^4.21.2"
+  "dependencies": {
+    "express": "^5.1.0"
   }
 }
